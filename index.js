@@ -15,7 +15,7 @@ http.createServer((req, res) => {
     //将数据插入页面模板
     const body = template({
       body: reactString,
-      title: 'Hello World from the server',
+      title: 'React Server Simple',
       initialState: JSON.stringify({ liked: false })
     });
     res.writeHead(200, { 'Content-Type': 'text/html' });
