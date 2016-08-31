@@ -14,9 +14,12 @@ module.exports = class LinkButton extends React.Component {
 
   render() {
     return (
-      <p onClick={this.handleClick}>
-        You {this.state.liked ? 'like' : 'havent\'t liked'} this.Clicd to toggle.
+      <div>
+      <button onClick={this.handleClick}>Toggle Text</button>
+      <p>
+        You {this.state.liked ? 'like' : 'havent\'t liked'} this.Click to toggle.
       </p>
+      </div>
     );
   }
 }
