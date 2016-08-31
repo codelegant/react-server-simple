@@ -1,0 +1,38 @@
+{
+  "name": "react-server-simple",
+  "version": "0.0.1",
+  "description": "基础版的服务器渲染 react",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "pub": "webpack --watch --progress --profile --colors --display-modules --display-error-details --display-cached --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codelegant/react-server-simple.git"
+  },
+  "keywords": [
+    "react",
+    "server",
+    "render"
+  ],
+  "author": "laichuanfeng@hotmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codelegant/react-server-simple/issues"
+  },
+  "homepage": "https://github.com/codelegant/react-server-simple#readme",
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.14.0",
+    "babel-loader": "^6.2.4",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
