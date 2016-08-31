@@ -1,3 +1,6 @@
+/**
+ * 页面模板
+ */
 module.exports = ({body, title, initialState}) => {
   return `
   <!DOCTYPE html>

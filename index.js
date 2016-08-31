@@ -9,8 +9,10 @@ const LinkButton = require('./LinkButton');
 
 http.createServer((req, res) => {
   if (req.url === '/') {
-    const linkButton = React.createFactory(LinkButton);
-    const reactString = ReactDOMServer.renderToStaticMarkup(linkButton({ liked: false }));
+    const linkButton = React.createFactory(LinkButton);//工厂方法，将类转换为函数(React Element)
+    const reactString = ReactDOMServer.renderToStaticMarkup(linkButton({ liked: false }));//渲染成字符串
+
+    //将数据插入页面模板
     const body = template({
       body: reactString,
       title: 'Hello World from the server',
