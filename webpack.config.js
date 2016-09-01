@@ -6,38 +6,40 @@
 var path = require('path');
 var webpack = require('webpack');
 module.exports = {
-  entry  : {
+  entry: {
     'bundle': './browser'
   },
-  output : {
-    path         : './',
-    filename     : '[name].min.js',//[name].js
+  output: {
+    path: './',
+    filename: '[name].min.js',//[name].js
     libraryTarget: "var"
   },
-  module : {
+  module: {
     loaders: [
       {
-        test   : /\.js?$/,
-        loader : 'babel',// short for babel-loader
+        test: /\.js?$/,
+        loader: 'babel',// short for babel-loader
         exclude: /node_modules/
 
       }
     ],
   },
-  target : 'web',
+  target: 'web',
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM'
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')// production | true
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {warnings: false},
-      output  : {comments: false}
+      compress: { warnings: false },
+      output: { comments: false }
     })
   ],
 
