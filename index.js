@@ -5,18 +5,18 @@ const fs = require('fs');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const template = require('./template');
-const LinkButton = require('./LinkButton');
+const ItemList = require('./ItemList');
+const model=require('./model');
 
 http.createServer((req, res) => {
   if (req.url === '/') {
-    const linkButton = React.createFactory(LinkButton);//工厂方法，将类转换为函数(React Element)
-    const reactString = ReactDOMServer.renderToStaticMarkup(linkButton({ liked: false }));//渲染成字符串
+    const linkButton = React.createFactory(ItemList);//工厂方法，将类转换为函数(React Element)
+    const reactString = ReactDOMServer.renderToStaticMarkup(linkButton(model));//渲染成字符串
 
     //将数据插入页面模板
     const body = template({
       body: reactString,
-      title: 'React Server Simple',
-      initialState: JSON.stringify({ liked: false })
+      title: 'React Server Simple'
     });
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(body);
